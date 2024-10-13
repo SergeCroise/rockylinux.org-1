@@ -2,9 +2,24 @@
 
 // date-fns is a modern JavaScript date utility library
 // https://date-fns.org/
-import { parseISO, format } from "date-fns";
+import { isValid, parseISO, format } from "date-fns";
 
-const FormattedDate = ({ dateString }: { dateString: string }) => {
+export interface FormattedDateProps {
+  dateString: string;
+  options?: {
+    invalidDateMessage?: string;
+  };
+}
+
+const FormattedDate = ({ dateString, options }: FormattedDateProps) => {
+  if (!dateString || !isValid(parseISO(dateString))) {
+    return (
+      <time dateTime={dateString}>
+        {options?.invalidDateMessage ?? "Invalid Date"}
+      </time>
+    );
+  }
+
   const date = parseISO(dateString);
 
   return <time dateTime={dateString}>{format(date, "LLL d, yyyy")}</time>;
