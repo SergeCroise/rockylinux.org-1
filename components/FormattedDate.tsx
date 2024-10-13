@@ -4,7 +4,7 @@
 // https://date-fns.org/
 import { parseISO, format } from "date-fns";
 
-const Date = ({ dateString }: { dateString: string }) => {
+const FormattedDate = ({ dateString }: { dateString: string }) => {
   const date = parseISO(dateString);
 
   return <time dateTime={dateString}>{format(date, "LLL d, yyyy")}</time>;
@@ -12,4 +12,4 @@ const Date = ({ dateString }: { dateString: string }) => {
   // https://date-fns.org/v2.22.1/docs/format
 };
 
-export default Date;
+export default FormattedDate;

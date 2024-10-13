@@ -1,4 +1,4 @@
-import Date from "@/components/Date";
+import FormattedDate from "@/components/FormattedDate";
 import ShareButtons from "@/components/shareButtons/ShareButtons";
 
 import { checkIfSlugIsValid, getPostData } from "@/lib/news";
@@ -48,7 +48,7 @@ export default async function Post({ params }: Props) {
     <div className="py-24 sm:py-32">
       <div className="mx-auto max-w-3xl text-base leading-7">
         <p className="text-base font-semibold leading-7 text-primary text-center uppercase font-display">
-          <Date dateString={postData.date} />
+          <FormattedDate dateString={postData.date} />
         </p>
         <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl mb-2 text-center font-display">
           {postData.title}
