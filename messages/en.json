@@ -1,6 +1,7 @@
 {
   "global": {
     "name": "Rocky Linux",
+    "nameLogo": "Rocky Linux Logo",
     "download": "Download",
     "notFound": {
       "title": "Not Found",

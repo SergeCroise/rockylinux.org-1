@@ -60,7 +60,7 @@ export default function Header() {
             className="-m-1.5 p-1.5"
           >
             <span className="sr-only">{tGlobal("name")}</span>
-            <Logo />
+            <Logo titleText={tGlobal("nameLogo")} />
           </Link>
         </div>
         <MobileNavigation
@@ -68,6 +68,7 @@ export default function Header() {
           openMainMenuSRText={tNav("openMainMenu")}
           rockyLinuxSRText={tGlobal("name")}
           downloadSRText={tGlobal("download")}
+          logoTitle={tGlobal("nameLogo")}
           translations={navigationTranslations}
         />
         <DesktopNavigation translations={navigationTranslations} />

@@ -25,6 +25,7 @@ export interface MobileNavigationProps {
   openMainMenuSRText: string;
   rockyLinuxSRText: string;
   downloadSRText: string;
+  logoTitle: string;
   translations: NavigationMenuItems;
 }
 
@@ -33,6 +34,7 @@ const MobileNavigation = ({
   openMainMenuSRText,
   rockyLinuxSRText,
   downloadSRText,
+  logoTitle,
   translations: t,
 }: MobileNavigationProps) => {
   return (
@@ -56,7 +58,7 @@ const MobileNavigation = ({
           className="w-full"
         >
           <a href="/">
-            <Logo />
+            <Logo titleText={logoTitle} />
             <span className="sr-only">{rockyLinuxSRText}</span>
           </a>
           <Accordion
